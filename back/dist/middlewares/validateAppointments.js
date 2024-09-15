@@ -1,6 +1,4 @@
 "use strict";
-//¿que quiero verificar?
-// quiero verificar si el id que llega por parametro existe en la BDD
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -11,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.validateAppointments = void 0;
+exports.validateInputsAppoint = exports.validateAppointments = void 0;
 const userService_1 = require("../services/userService");
 const validateAppointments = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const appointment = req.body;
@@ -29,3 +27,13 @@ const validateAppointments = (req, res, next) => __awaiter(void 0, void 0, void 
     }
 });
 exports.validateAppointments = validateAppointments;
+const validateInputsAppoint = (req, res, next) => {
+    const { date, time } = req.body;
+    if (!date || !time) {
+        return res.status(400).json({ error: "Faltan completar datos" });
+    }
+    else {
+        next();
+    }
+};
+exports.validateInputsAppoint = validateInputsAppoint;

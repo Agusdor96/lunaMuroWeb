@@ -3,8 +3,9 @@ import { CredentialDto } from "../dtos/CredentialDto";
 import { Credentials } from "../entities/CredentialEntitie";
 
 export const createCredentialService = async (credentialData: CredentialDto): Promise<Credentials> => {
-    const newCredential: Credentials = await CredentialModel.create(credentialData);
-    newCredential.login = false;
+    const newCredential: Credentials = CredentialModel.create(credentialData);
+    if(!newCredential) throw new Error ("Error al crear credenciales")
+
     await CredentialModel.save(newCredential);
     return newCredential;
 };
@@ -22,5 +23,5 @@ export const checkCredentials = async (credentialData: CredentialDto): Promise<C
     if (credentialUsername && credentialUsername.password === credentialData.password) {
         return credentialUsername;
     }
-    throw new Error("Invalid credentials");
+    throw new Error("Credenciales Invalidas");
 };

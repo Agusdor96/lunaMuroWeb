@@ -2,15 +2,17 @@ import { DataSource } from "typeorm"
 import { User } from "../entities/User"
 import { Appointment } from "../entities/AppointmentEntitie"
 import { Credentials } from "../entities/CredentialEntitie"
+import * as dotenv from 'dotenv';
+require("dotenv").config();
 
 export const AppDataSource = new DataSource({
-    type: "postgres",
-    host: "localhost",
-    port: 5432,
-    username: "postgres",
-    password: "1929Grace",
-    database: "proyecto_m3",
-    dropSchema: false,
+    type: process.env.TYPE as "postgres",
+    host: process.env.HOST,
+    port: Number(process.env.DB_PORT),
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    dropSchema: process.env.DROPSCHEMA === "true",
     synchronize: true,
     logging: false,
     entities: [User, Credentials, Appointment],

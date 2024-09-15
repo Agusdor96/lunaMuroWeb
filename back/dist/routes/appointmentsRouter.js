@@ -11,6 +11,6 @@ const validateAppointments_1 = require("../middlewares/validateAppointments");
 const appointmentRouter = (0, express_1.Router)();
 appointmentRouter.get("/", appointmentsController_1.getAppointments);
 appointmentRouter.get("/:id", appointmentsController_1.getAppointmentById);
-appointmentRouter.post("/schedule", validateAppointments_1.validateAppointments, appointmentsController_1.createAppointment);
+appointmentRouter.post("/schedule", validateAppointments_1.validateAppointments, validateAppointments_1.validateInputsAppoint, appointmentsController_1.createAppointment);
 appointmentRouter.put("/cancel/:id", appointmentsController_1.cancelAppointment);
 exports.default = appointmentRouter;
