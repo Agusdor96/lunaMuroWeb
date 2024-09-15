@@ -11,6 +11,6 @@ const validateUser_1 = require("../middlewares/validateUser");
 const userRouter = (0, express_1.Router)();
 userRouter.get("/", userController_1.getUsers);
 userRouter.get("/:id", userController_1.getUserById);
-userRouter.post("/register", validateUser_1.validateUser, userController_1.createUser);
+userRouter.post("/register", validateUser_1.validateInputs, validateUser_1.creationOfUser, userController_1.createUser);
 userRouter.post("/login", userController_1.userLogin);
 exports.default = userRouter;

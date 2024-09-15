@@ -105,6 +105,6 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
-  "include": ["src/**/*.ts"],                            // Dentro SRC y cualquier(**) carpeta que este dentro de esta, cualquier(*) archivo que tenga la extension: ts 
+  "include": ["src/**/*.ts", "src/docs/user-docs.js"],                            // Dentro SRC y cualquier(**) carpeta que este dentro de esta, cualquier(*) archivo que tenga la extension: ts 
   "exclude": ["node_modules"]
 }

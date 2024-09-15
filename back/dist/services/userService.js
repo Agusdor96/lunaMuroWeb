@@ -24,7 +24,7 @@ const getUserService = () => __awaiter(void 0, void 0, void 0, function* () {
 exports.getUserService = getUserService;
 const getUserServiceById = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const user = yield data_source_1.UserModel.findOne({
-        where: { id: id },
+        where: { id },
         relations: {
             appointment: true,
             credentialId: true
@@ -55,7 +55,7 @@ const userServiceLogin = (credentialData) => __awaiter(void 0, void 0, void 0, f
         cred.login = true;
         const loginResult = {
             login: cred.login,
-            user: cred.user
+            user: cred.user,
         };
         yield data_source_1.CredentialModel.save(cred);
         return loginResult;
