@@ -1,13 +1,13 @@
 import { Request, Response } from "express"
 import { createUserService, getUserService, getUserServiceById, userServiceLogin } from "../services/userService"
+import { CredentialDto } from "../dtos/CredentialDto";
 import { UserDto } from "../dtos/UserDto";
 import { User } from "../entities/User";
-import { CredentialDto } from "../dtos/CredentialDto";
 
 
 export const getUsers = async (req:Request, res:Response) => {
     try{
-        const users:User[] = await getUserService();
+        const users:User[] | string= await getUserService();
         res.status(200).json(users)
     }catch (err){
         res.status(400).json({error: "Error al obtener usuarios"})

@@ -14,7 +14,19 @@ module.exports = {
                 type: 'number',
                 description: 'Numero de identificacion nacional del usuario'
             },
+            birthdate:{
+                type: "string",
+                description: "Fecha de nacimiento"
+            },
+            username:{
+                type: "string",
+                description: "Nombre de usuario"
+            },
+            password:{
+                type: "string",
+                description: "contraseña"
+            }
         },
-        required: ['name', 'email', "nDni"]
+        required: ['name', 'email', "nDni", "birthdate", "username", "password"]
     }
 };

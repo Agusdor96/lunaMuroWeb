@@ -11,7 +11,7 @@ export class Credentials{
         username: string
     @Column()
         password: string
-    @Column()
+    @Column({default:false})
         login: boolean
     
     @OneToOne(() => User, (user) => user.credentialId)
