@@ -1,0 +1,132 @@
+.divForms{
+    width: 90%;
+    border: solid black;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 50px;
+    background-image: url("/public/Portada2.jpg");
+}
+
+.Form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top:30%;
+    right:20%;
+    width:30%;
+    padding: 30px;
+    margin-top: 10px;
+    background-color:rgba(206, 217, 218, 0.578);
+    border:solid black 5px;
+    
+    border-radius: 1rem;
+    font-style: oblique;
+}
+
+.columnInputs{
+display: flex;
+
+}
+
+.FormLogin{
+    top:30%;
+    right:20%;
+    width:15%;
+    height: 30%;
+    padding: 20px;
+    margin-top: 10px;
+    background-color:rgba(29, 218, 243, 0.578);
+    border:solid black 5px;
+    border-radius: 1rem;
+    font-style: oblique;
+}
+
+.appointForm{
+    text-align: center;   
+    padding: 20px;
+    margin-top: 10px;
+    background-color:rgba(206, 217, 218, 0.578);
+    border:solid black 5px;
+    box-shadow: 0 0 20px rgb(247, 141, 13);
+    border-radius: 1rem;
+    font-style: oblique;
+}
+
+.title{
+    color: rgb(246, 207, 53);
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.labelInput{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.inputs{
+    border: solid black 1px;
+    border-radius: 15px;
+    background-color: rgb(213, 230, 246);
+    margin: 5px;
+    padding: 6px;
+}
+
+.Button{
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color:rgba(186, 236, 70, 0.981);
+    padding: 5px;
+    width: 20%;
+}
+.LoginButton{
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color:rgba(186, 236, 70, 0.981);
+    padding: 5px;
+    width: 30%;
+}
+.appointButton{
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color:rgba(186, 236, 70, 0.981);
+    padding: 5px;
+    width: 40%;
+}
+.reDirecButton{
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color:rgba(228, 236, 70, 0.981);
+    padding: 5px;
+    width: 100%;
+}
+
+.Button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+.LoginButton:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+.appointButton:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.errors{
+    color: rgb(242, 58, 58);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.label {
+    font-weight: bold;
+}

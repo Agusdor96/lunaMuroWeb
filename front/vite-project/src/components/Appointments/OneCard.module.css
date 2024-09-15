@@ -1,0 +1,31 @@
+
+.container {
+    margin: 10px;
+    padding: 20px;
+    border: solid black;
+    border-radius: 16px;
+    background-color: rgba(239, 160, 56, 0.892);
+    font-style: oblique;
+    
+}
+
+.title{
+    color: rgb(246, 207, 53);
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.button{
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color:rgba(12, 188, 246, 0.363);
+    padding: 5px;
+}
+
+.button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}

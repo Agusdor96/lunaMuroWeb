@@ -1,0 +1,12 @@
+.homeContainer {
+    max-width: 80%; /* Ajusta el ancho según sea necesario */
+    margin: 0 auto; /* Centra el carrusel en la página */
+    padding: 10px; /* Agrega padding para espaciar el contenedor */
+   
+  }
+
+  .carouselImage {
+    max-width: 100%; /* Ajusta el ancho máximo para que las imágenes no se salgan del contenedor */
+    max-height: 450px; /* Establece una altura máxima para las imágenes */
+    width: auto;
+  }
