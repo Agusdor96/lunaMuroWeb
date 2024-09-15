@@ -44,15 +44,21 @@
  * @swagger
  * /users/register:
  *   post:
- *     summary: Obtiene todos los usuarios
+ *     summary: Registro de un usuario
  *     tags: [Usuarios]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/User'
  *     responses:
  *       200:
- *         description: Lista de usuarios
+ *         description: Informacion del usuario registrado
  *         content:
  *           application/json:
  *             schema:
- *               type: array
+ *               type: object
  *               items:
  *                 $ref: '#/components/schemas/User'
  *       500:
@@ -62,15 +68,28 @@
  * @swagger
  * /users/login:
  *   post:
- *     summary: Obtiene todos los usuarios
+ *     summary: Login de un usuario registrado
  *     tags: [Usuarios]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 description: Correo del usuario
+ *               password:
+ *                 type: string
+ *                 description: Contraseña del usuario
  *     responses:
  *       200:
- *         description: Lista de usuarios
+ *         description: Token asignado al user
  *         content:
  *           application/json:
  *             schema:
- *               type: array
+ *               type: object
  *               items:
  *                 $ref: '#/components/schemas/User'
  *       500:

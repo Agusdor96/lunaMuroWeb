@@ -1,4 +1,5 @@
 const swaggerJSDoc = require('swagger-jsdoc');
+const userSchema = require('../docs/schemas/userSchema');
 
 const swaggerOptions = {
     definition: {
@@ -6,7 +7,7 @@ const swaggerOptions = {
         info: {
             title: 'API Proyecto LaLunaMuro',  // Nombre de tu proyecto
             version: '1.0.0',                                      // Versión de la API
-            description: 'Esta es la API de un proyecto para una plataforma de turnos y Ecommecerce para el centro de escalada LaLunaMuro',  // Descripción general
+            description: 'API para la plataforma de turnos y ecommerce LaLunaMuro',  // Descripción general
             // contact: {
             //     name: 'Soporte Técnico',                           // Nombre de contacto
             //     email: 'miroetto12@lalunamuro.com'                    // Email de contacto
@@ -23,13 +24,16 @@ const swaggerOptions = {
             // }
         ],
         components: {
-            securitySchemes: {
-                bearerAuth: {
-                    type: 'http',
-                    scheme: 'bearer',
-                    bearerFormat: 'JWT'
-                }
+            schemas: {
+                ...userSchema
             }
+            // securitySchemes: {
+            //     bearerAuth: {
+            //         type: 'http',
+            //         scheme: 'bearer',
+            //         bearerFormat: 'JWT'
+            //     }
+            // }
         },
         security: [
             {

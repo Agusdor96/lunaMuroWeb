@@ -2,10 +2,6 @@ module.exports = {
     User: {
         type: 'object',
         properties: {
-            id: {
-                type: 'string',
-                description: 'ID único del usuario'
-            },
             name: {
                 type: 'string',
                 description: 'Nombre del usuario'
@@ -13,8 +9,12 @@ module.exports = {
             email: {
                 type: 'string',
                 description: 'Correo electrónico del usuario'
-            }
+            },
+            nDni: {
+                type: 'number',
+                description: 'Numero de identificacion nacional del usuario'
+            },
         },
-        required: ['id', 'name', 'email']
+        required: ['name', 'email', "nDni"]
     }
 };
