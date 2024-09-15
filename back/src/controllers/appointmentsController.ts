@@ -15,6 +15,7 @@ export const getAppointments = async (req:Request, res:Response) => {
 export const getAppointmentById = async (req:Request, res:Response) => {
   try{
     const {id} = req.params 
+    console.log("2", req.params);
     const appId: Appointment | null = await getAppServiceById(Number(id))
     res.status(200).json(appId)
   } catch (err){

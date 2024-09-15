@@ -1,5 +1,6 @@
 const swaggerJSDoc = require('swagger-jsdoc');
 const userSchema = require('../docs/schemas/userSchema');
+const appointmentSchema = require('../docs/schemas/appointmentSchema');
 
 const swaggerOptions = {
     definition: {
@@ -25,7 +26,8 @@ const swaggerOptions = {
         ],
         components: {
             schemas: {
-                ...userSchema
+                ...userSchema,
+                ...appointmentSchema
             }
             // securitySchemes: {
             //     bearerAuth: {
@@ -42,7 +44,6 @@ const swaggerOptions = {
         ],
     },
     apis: ['./src/docs/*.js'], // Aquí defines las rutas o archivos donde están los endpoints documentados
-};
-
+}; 
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
 module.exports = swaggerDocs;
