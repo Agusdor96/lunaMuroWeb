@@ -1,27 +1,26 @@
 import { AppointmentModel, UserModel } from "../config/data-source";
 import AppointmentDto from "../dtos/AppointmentDto";
 import { Appointment } from "../entities/AppointmentEntitie";
-import { Credentials } from "../entities/CredentialEntitie";
 import { User } from "../entities/User";
-import { getUserServiceById } from "./userService";
 
 
-export const getAppointmentsService = async ():Promise<Appointment[]>=>{
+
+export const getAppointmentsService = async ():Promise<Appointment[]> =>{
     const appointments = await AppointmentModel.find({
         relations: {
             user:true,
         }
     })
+    if(!appointments.length) throw new Error ("No hay turnos registrados")
     return appointments;
 }
 
 export const getAppServiceById = async (id:number): Promise<Appointment | null> =>{
     
     const appointmentbyId = await AppointmentModel.findOneBy({id:id})
-    if(!appointmentbyId){
-        throw new Error ("Id inexistente")
-    }
-    return appointmentbyId;
+    if(!appointmentbyId) throw new Error ("Id inexistente")
+    
+        return appointmentbyId;
 }
 
 export const createAppointmentService = async (appointmentData: AppointmentDto ): Promise<Appointment> =>{
